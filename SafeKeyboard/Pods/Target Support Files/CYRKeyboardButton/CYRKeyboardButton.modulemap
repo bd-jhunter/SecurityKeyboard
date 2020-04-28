@@ -1,0 +1,6 @@
+framework module CYRKeyboardButton {
+  umbrella header "CYRKeyboardButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

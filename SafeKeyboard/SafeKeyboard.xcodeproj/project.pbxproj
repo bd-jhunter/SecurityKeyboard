@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F7F3BF7245136AE0086B708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BF6245136AE0086B708 /* AppDelegate.swift */; };
+		4F7F3BF9245136AE0086B708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BF8245136AE0086B708 /* SceneDelegate.swift */; };
+		4F7F3BFB245136AE0086B708 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BFA245136AE0086B708 /* ViewController.swift */; };
+		4F7F3BFE245136AE0086B708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3BFC245136AE0086B708 /* Main.storyboard */; };
+		4F7F3C00245136B10086B708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3BFF245136B10086B708 /* Assets.xcassets */; };
+		4F7F3C03245136B10086B708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3C01245136B10086B708 /* LaunchScreen.storyboard */; };
+		4F7F3C0C245138730086B708 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3C0B245138730086B708 /* KeyboardView.swift */; };
+		4F7F3C0E245138810086B708 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3C0D245138810086B708 /* KeyboardView.xib */; };
+		4FAEBAEA24580E19009A9B41 /* SRTKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */; };
+		D92BA4F68285AC35CD5EB10F /* Pods_SafeKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644CB9B291AF1A7FE793898F /* Pods_SafeKeyboard.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F7F3BF3245136AE0086B708 /* SafeKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F7F3BF6245136AE0086B708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F7F3BF8245136AE0086B708 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4F7F3BFA245136AE0086B708 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4F7F3BFD245136AE0086B708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F7F3BFF245136B10086B708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F7F3C02245136B10086B708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F7F3C04245136B10086B708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F7F3C0B245138730086B708 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		4F7F3C0D245138810086B708 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRTKeyboardButton.swift; sourceTree = "<group>"; };
+		644CB9B291AF1A7FE793898F /* Pods_SafeKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9823FC0C1F7E4E358F012CC /* Pods-SafeKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeKeyboard.debug.xcconfig"; path = "Target Support Files/Pods-SafeKeyboard/Pods-SafeKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		F2DCD404AE7DBF6578F9B04F /* Pods-SafeKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeKeyboard.release.xcconfig"; path = "Target Support Files/Pods-SafeKeyboard/Pods-SafeKeyboard.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F7F3BF0245136AE0086B708 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D92BA4F68285AC35CD5EB10F /* Pods_SafeKeyboard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24184976655A3E2D6C03A1E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9823FC0C1F7E4E358F012CC /* Pods-SafeKeyboard.debug.xcconfig */,
+				F2DCD404AE7DBF6578F9B04F /* Pods-SafeKeyboard.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4F7F3BEA245136AE0086B708 = {
+			isa = PBXGroup;
+			children = (
+				4F7F3BF5245136AE0086B708 /* SafeKeyboard */,
+				4F7F3BF4245136AE0086B708 /* Products */,
+				24184976655A3E2D6C03A1E9 /* Pods */,
+				71CFE943CF9D923A770CD33F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4F7F3BF4245136AE0086B708 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F7F3BF3245136AE0086B708 /* SafeKeyboard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F7F3BF5245136AE0086B708 /* SafeKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4F7F3C0A245137510086B708 /* CustomizedKeyboard */,
+				4F7F3BF6245136AE0086B708 /* AppDelegate.swift */,
+				4F7F3BF8245136AE0086B708 /* SceneDelegate.swift */,
+				4F7F3BFA245136AE0086B708 /* ViewController.swift */,
+				4F7F3BFC245136AE0086B708 /* Main.storyboard */,
+				4F7F3BFF245136B10086B708 /* Assets.xcassets */,
+				4F7F3C01245136B10086B708 /* LaunchScreen.storyboard */,
+				4F7F3C04245136B10086B708 /* Info.plist */,
+			);
+			path = SafeKeyboard;
+			sourceTree = "<group>";
+		};
+		4F7F3C0A245137510086B708 /* CustomizedKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4FAEBAE824580DEF009A9B41 /* Button */,
+				4F7F3C0B245138730086B708 /* KeyboardView.swift */,
+				4F7F3C0D245138810086B708 /* KeyboardView.xib */,
+			);
+			path = CustomizedKeyboard;
+			sourceTree = "<group>";
+		};
+		4FAEBAE824580DEF009A9B41 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		71CFE943CF9D923A770CD33F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				644CB9B291AF1A7FE793898F /* Pods_SafeKeyboard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F7F3BF2245136AE0086B708 /* SafeKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F7F3C07245136B10086B708 /* Build configuration list for PBXNativeTarget "SafeKeyboard" */;
+			buildPhases = (
+				8430F67C4E460260B6362527 /* [CP] Check Pods Manifest.lock */,
+				4F7F3BEF245136AE0086B708 /* Sources */,
+				4F7F3BF0245136AE0086B708 /* Frameworks */,
+				4F7F3BF1245136AE0086B708 /* Resources */,
+				0247C7B6727368D4552DC26F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SafeKeyboard;
+			productName = SafeKeyboard;
+			productReference = 4F7F3BF3245136AE0086B708 /* SafeKeyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F7F3BEB245136AE0086B708 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = com.jh.testkeyboard;
+				TargetAttributes = {
+					4F7F3BF2245136AE0086B708 = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+					};
+				};
+			};
+			buildConfigurationList = 4F7F3BEE245136AE0086B708 /* Build configuration list for PBXProject "SafeKeyboard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F7F3BEA245136AE0086B708;
+			productRefGroup = 4F7F3BF4245136AE0086B708 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F7F3BF2245136AE0086B708 /* SafeKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F7F3BF1245136AE0086B708 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F7F3C03245136B10086B708 /* LaunchScreen.storyboard in Resources */,
+				4F7F3C0E245138810086B708 /* KeyboardView.xib in Resources */,
+				4F7F3C00245136B10086B708 /* Assets.xcassets in Resources */,
+				4F7F3BFE245136AE0086B708 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0247C7B6727368D4552DC26F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeKeyboard/Pods-SafeKeyboard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeKeyboard/Pods-SafeKeyboard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafeKeyboard/Pods-SafeKeyboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8430F67C4E460260B6362527 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeKeyboard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F7F3BEF245136AE0086B708 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F7F3BFB245136AE0086B708 /* ViewController.swift in Sources */,
+				4F7F3C0C245138730086B708 /* KeyboardView.swift in Sources */,
+				4F7F3BF7245136AE0086B708 /* AppDelegate.swift in Sources */,
+				4FAEBAEA24580E19009A9B41 /* SRTKeyboardButton.swift in Sources */,
+				4F7F3BF9245136AE0086B708 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F7F3BFC245136AE0086B708 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F7F3BFD245136AE0086B708 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F7F3C01245136B10086B708 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F7F3C02245136B10086B708 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F7F3C05245136B10086B708 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F7F3C06245136B10086B708 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F7F3C08245136B10086B708 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9823FC0C1F7E4E358F012CC /* Pods-SafeKeyboard.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PWUBJF64PG;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"$(SRCROOT)/SafeKeyboard/CYRKeyboardButton",
+				);
+				INFOPLIST_FILE = SafeKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jh.testkeyboard.SafeKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4F7F3C09245136B10086B708 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2DCD404AE7DBF6578F9B04F /* Pods-SafeKeyboard.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PWUBJF64PG;
+				INFOPLIST_FILE = SafeKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jh.testkeyboard.SafeKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F7F3BEE245136AE0086B708 /* Build configuration list for PBXProject "SafeKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F7F3C05245136B10086B708 /* Debug */,
+				4F7F3C06245136B10086B708 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F7F3C07245136B10086B708 /* Build configuration list for PBXNativeTarget "SafeKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F7F3C08245136B10086B708 /* Debug */,
+				4F7F3C09245136B10086B708 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F7F3BEB245136AE0086B708 /* Project object */;
+}
