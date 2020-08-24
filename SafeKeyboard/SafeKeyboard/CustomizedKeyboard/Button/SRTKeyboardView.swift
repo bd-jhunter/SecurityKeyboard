@@ -1,5 +1,5 @@
 //
-//  KeyboardView.swift
+//  SRTKeyboardView.swift
 //  SafeKeyboard
 //
 //  Created by hunter.liu on 2020/4/23.
@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import CYRKeyboardButton
 
 enum SRTKeyItemType {
     case numeric
@@ -115,7 +114,7 @@ enum SRTFunctionKeyType: Int {
     case backspace = 502
 }
 
-class KeyboardView: UIView {
+class SRTKeyboardView: UIView {
     weak var textInput: UIView? {
         didSet {
             updateTextInput()

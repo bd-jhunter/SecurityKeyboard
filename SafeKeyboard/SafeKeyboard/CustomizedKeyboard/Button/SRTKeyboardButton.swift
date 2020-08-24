@@ -10,7 +10,6 @@ import UIKit
 
 class SRTKeyboardButton: UIControl {
     // MARK: - Properties
-    private(set) var position: SRTKeyboardButtonPosition = .inner
     var input: String = "" {
         didSet {
             inputLabel?.text = input

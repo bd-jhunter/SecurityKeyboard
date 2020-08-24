@@ -8,24 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		4F635C3324EFABDE00249290 /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F635C3224EFABDE00249290 /* CoverViewController.swift */; };
-		4F635C3524EFBC7500249290 /* SRTKeyboardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F635C3424EFBC7500249290 /* SRTKeyboardButtonView.swift */; };
-		4F635C3724EFBC8C00249290 /* SRTDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F635C3624EFBC8C00249290 /* SRTDefines.swift */; };
 		4F635C3924EFD02300249290 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F635C3824EFD02300249290 /* Utils.swift */; };
 		4F7F3BF7245136AE0086B708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BF6245136AE0086B708 /* AppDelegate.swift */; };
 		4F7F3BFB245136AE0086B708 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BFA245136AE0086B708 /* ViewController.swift */; };
 		4F7F3BFE245136AE0086B708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3BFC245136AE0086B708 /* Main.storyboard */; };
 		4F7F3C00245136B10086B708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3BFF245136B10086B708 /* Assets.xcassets */; };
 		4F7F3C03245136B10086B708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3C01245136B10086B708 /* LaunchScreen.storyboard */; };
-		4F7F3C0C245138730086B708 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3C0B245138730086B708 /* KeyboardView.swift */; };
-		4F7F3C0E245138810086B708 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3C0D245138810086B708 /* KeyboardView.xib */; };
+		4F7F3C0C245138730086B708 /* SRTKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3C0B245138730086B708 /* SRTKeyboardView.swift */; };
+		4F7F3C0E245138810086B708 /* SRTKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3C0D245138810086B708 /* SRTKeyboardView.xib */; };
 		4FAEBAEA24580E19009A9B41 /* SRTKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */; };
 		D92BA4F68285AC35CD5EB10F /* Pods_SafeKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644CB9B291AF1A7FE793898F /* Pods_SafeKeyboard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F635C3224EFABDE00249290 /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
-		4F635C3424EFBC7500249290 /* SRTKeyboardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRTKeyboardButtonView.swift; sourceTree = "<group>"; };
-		4F635C3624EFBC8C00249290 /* SRTDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRTDefines.swift; sourceTree = "<group>"; };
 		4F635C3824EFD02300249290 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4F7F3BF3245136AE0086B708 /* SafeKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7F3BF6245136AE0086B708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,8 +30,8 @@
 		4F7F3BFF245136B10086B708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F7F3C02245136B10086B708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F7F3C04245136B10086B708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F7F3C0B245138730086B708 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
-		4F7F3C0D245138810086B708 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		4F7F3C0B245138730086B708 /* SRTKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRTKeyboardView.swift; sourceTree = "<group>"; };
+		4F7F3C0D245138810086B708 /* SRTKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SRTKeyboardView.xib; sourceTree = "<group>"; };
 		4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRTKeyboardButton.swift; sourceTree = "<group>"; };
 		644CB9B291AF1A7FE793898F /* Pods_SafeKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9823FC0C1F7E4E358F012CC /* Pods-SafeKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeKeyboard.debug.xcconfig"; path = "Target Support Files/Pods-SafeKeyboard/Pods-SafeKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				4FAEBAE824580DEF009A9B41 /* Button */,
-				4F7F3C0B245138730086B708 /* KeyboardView.swift */,
-				4F7F3C0D245138810086B708 /* KeyboardView.xib */,
 			);
 			path = CustomizedKeyboard;
 			sourceTree = "<group>";
@@ -118,9 +112,9 @@
 		4FAEBAE824580DEF009A9B41 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				4F635C3624EFBC8C00249290 /* SRTDefines.swift */,
+				4F7F3C0B245138730086B708 /* SRTKeyboardView.swift */,
+				4F7F3C0D245138810086B708 /* SRTKeyboardView.xib */,
 				4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */,
-				4F635C3424EFBC7500249290 /* SRTKeyboardButtonView.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -195,7 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F7F3C03245136B10086B708 /* LaunchScreen.storyboard in Resources */,
-				4F7F3C0E245138810086B708 /* KeyboardView.xib in Resources */,
+				4F7F3C0E245138810086B708 /* SRTKeyboardView.xib in Resources */,
 				4F7F3C00245136B10086B708 /* Assets.xcassets in Resources */,
 				4F7F3BFE245136AE0086B708 /* Main.storyboard in Resources */,
 			);
@@ -252,10 +246,8 @@
 			files = (
 				4F635C3324EFABDE00249290 /* CoverViewController.swift in Sources */,
 				4F7F3BFB245136AE0086B708 /* ViewController.swift in Sources */,
-				4F7F3C0C245138730086B708 /* KeyboardView.swift in Sources */,
-				4F635C3524EFBC7500249290 /* SRTKeyboardButtonView.swift in Sources */,
+				4F7F3C0C245138730086B708 /* SRTKeyboardView.swift in Sources */,
 				4F7F3BF7245136AE0086B708 /* AppDelegate.swift in Sources */,
-				4F635C3724EFBC8C00249290 /* SRTDefines.swift in Sources */,
 				4FAEBAEA24580E19009A9B41 /* SRTKeyboardButton.swift in Sources */,
 				4F635C3924EFD02300249290 /* Utils.swift in Sources */,
 			);
