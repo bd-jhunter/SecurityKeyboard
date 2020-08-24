@@ -77,10 +77,20 @@ class SRTKeyboardButton: UIControl {
     // MARK: - Touch actions
     @objc private func handleTouchDown() {
         UIDevice.current.playInputClick()
+        setNeedsDisplay()
     }
 
     @objc private func handleTouchUpInside() {
         insertText(input)
+        setNeedsDisplay()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
     }
     
     // MARK: - Private methods
@@ -103,6 +113,8 @@ class SRTKeyboardButton: UIControl {
         
         addSubview(inputLabel)
         self.inputLabel = inputLabel;
+        
+        setNeedsDisplay()
     }
 
     private func updateDisplayStyle() {

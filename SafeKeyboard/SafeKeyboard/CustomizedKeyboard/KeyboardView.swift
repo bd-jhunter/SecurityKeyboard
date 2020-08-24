@@ -125,8 +125,7 @@ class KeyboardView: UIView {
     @IBOutlet weak var accessoryView: UIView!
     @IBOutlet weak var inputContainer: UIView!
     
-//    private var buttons: [SRTKeyboardButton] = []
-    private var buttons: [CYRKeyboardButton] = []
+    private var buttons: [SRTKeyboardButton] = []
     private var functionButtons: [UIButton] = []
     private var buttonSize = CGSize(width: 30, height: 45)
     private var fatButtonSize = CGSize(width: 50, height: 45)
@@ -188,7 +187,6 @@ class KeyboardView: UIView {
         functionButtons.removeAll()
     }
     
-    /*
     private func createButton(for row: Int) {
         guard row < 3 else { return }
         
@@ -246,67 +244,7 @@ class KeyboardView: UIView {
             leading += Double(buttonSize.width) + marginLeading
         }
     }
- */
-    
-    private func createButton(for row: Int) {
-        guard row < 3 else { return }
-        
-        let startPoint = leftTop(for: row)
-        var leading = Double(startPoint.x)
-        let keyItems = keys(for: row)
-        for index in 0..<buttonCountPerRow {
-            if index == 0, row == 2 {
-                leading += Double(buttonSize.width) + marginLeading
-                continue
-            }
-            
-            let button: CYRKeyboardButton = {
-                $0.translatesAutoresizingMaskIntoConstraints = false
-                inputContainer.addSubview($0)
-                $0.snp.makeConstraints { make in
-                    make.size.equalTo(buttonSize)
-                    make.leading.equalToSuperview().offset(leading)
-                    make.top.equalToSuperview().offset(startPoint.y)
-                }
-                buttons.append($0)
-                $0.style = .tablet
-                return $0
-            }(CYRKeyboardButton())
-            button.input = keyItems[index].rawValue
-            if let textInput = textInput as? UITextInput {
-                button.textInput = textInput
-            }
-            
-            leading += Double(buttonSize.width) + marginLeading
-        }
-    }
  
-    private func creatBottomRow() {
-        let startPoint = leftTop(for: 3)
-        var leading = Double(startPoint.x) + marginLeading + Double(fatButtonSize.width)
-        let keyItems = keys(for: 3)
-        // First is space, last is backspace
-        for index in 1..<buttonCountInLastRow {
-            let button: CYRKeyboardButton = {
-                $0.translatesAutoresizingMaskIntoConstraints = false
-                inputContainer.addSubview($0)
-                $0.snp.makeConstraints { make in
-                    make.size.equalTo(buttonSize)
-                    make.leading.equalToSuperview().offset(leading)
-                    make.top.equalToSuperview().offset(startPoint.y)
-                }
-                buttons.append($0)
-                return $0
-            }(CYRKeyboardButton())
-            button.input = keyItems[index].rawValue
-            if let textInput = textInput as? UITextInput {
-                button.textInput = textInput
-            }
-            
-            leading += Double(buttonSize.width) + marginLeading
-        }
-    }
-    
     private func leftTop(for row: Int) -> CGPoint {
         let left = marginLeading
         let top = marginTop * Double(row + 1) + Double(buttonSize.height) * Double(row)
