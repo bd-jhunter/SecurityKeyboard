@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var pwdTextField: UITextField!
+class ViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var pwdTextField: AppendTextField!
     
     private var keyboardView: SRTKeyboardView!
     
@@ -27,6 +27,17 @@ class ViewController: UIViewController {
         keyboardView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 260)
         pwdTextField.inputView = keyboardView.inputContainer
         pwdTextField.inputAccessoryView = keyboardView.accessoryView
+        pwdTextField.isSelected = false
+        pwdTextField.delegate = self
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
     }
 }
 
+class AppendTextField: UITextField {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+}

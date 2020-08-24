@@ -29,6 +29,8 @@ class SRTKeyboardButton: UIControl {
     var keyShadowColor: UIColor = #colorLiteral(red: 0.5333333333, green: 0.5411764706, blue: 0.5568627451, alpha: 1)
     var keyHighlightedColor: UIColor = #colorLiteral(red: 0.8352941176, green: 0.8392156863, blue: 0.8470588235, alpha: 1)
     weak var textInput: UITextInput?
+    var securityType: SRTButtonType = .normal
+    var textLimited: Int = 6
 
     // MARK: - UI elements
     private weak var inputLabel: UILabel?
@@ -132,20 +134,43 @@ class SRTKeyboardButton: UIControl {
         guard let textInput = textInput else { return }
         var shouldInsertText = true
         
-        if let textView = textInput as? UITextView {
-            // Call UITextViewDelegate methods if necessary
-            let selectedRange = textView.selectedRange
+        switch securityType {
+        case .normal:
+            if let textView = textInput as? UITextView {
+                // Call UITextViewDelegate methods if necessary
+                let selectedRange = textView.selectedRange
+                
+                shouldInsertText = textView.delegate?.textView?(textView, shouldChangeTextIn: selectedRange, replacementText: text) ?? true
+            } else if let textField = textInput as? UITextField {
+                // Call UITextFieldDelgate methods if necessary
+                let selectedRange = textInputSelectedRange
+                
+                shouldInsertText = textField.delegate?.textField?(textField, shouldChangeCharactersIn: selectedRange, replacementString: text) ?? true
+            }
+        case .security:
+            var currentText: String = ""
             
-            shouldInsertText = textView.delegate?.textView?(textView, shouldChangeTextIn: selectedRange, replacementText: text) ?? true
-        } else if let textField = textInput as? UITextField {
-            // Call UITextFieldDelgate methods if necessary
-            let selectedRange = textInputSelectedRange
-            
-            shouldInsertText = textField.delegate?.textField?(textField, shouldChangeCharactersIn: selectedRange, replacementString: text) ?? true
+            if let textView = textInput as? UITextView {
+                currentText = textView.text
+            } else if let textField = textInput as? UITextField {
+                currentText = textField.text ?? ""
+            }
+            shouldInsertText = currentText.count < textLimited
         }
         
         if shouldInsertText {
-            textInput.insertText(text)
+            switch securityType {
+            case .normal:
+                textInput.insertText(text)
+            case .security(let textBox):
+                // in security mode, only support append, insert and replace is denied
+                if let textField = textInput as? UITextField {
+                    textField.text = "\(textField.text ?? "")*"
+                } else if let textView = textInput as? UITextView {
+                    textView.text += "*"
+                }
+                textBox.append(text)
+            }
         }
     }
     
