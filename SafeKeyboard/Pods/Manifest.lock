@@ -1,24 +1,16 @@
 PODS:
-  - CYRKeyboardButton (0.5.3):
-    - TurtleBezierPath
   - SnapKit (4.2.0)
-  - TurtleBezierPath (1.0)
 
 DEPENDENCIES:
-  - CYRKeyboardButton
   - SnapKit
 
 SPEC REPOS:
   trunk:
-    - CYRKeyboardButton
     - SnapKit
-    - TurtleBezierPath
 
 SPEC CHECKSUMS:
-  CYRKeyboardButton: 113e92f83c3f991652b64500a22cb85b37bf275d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  TurtleBezierPath: 680f51b8ed5a27c652974f1b89782c8e2146116b
 
-PODFILE CHECKSUM: 164a454f3655e0a973236b7a7884558ca2f43265
+PODFILE CHECKSUM: c569c0f3889625cad326b5f6ac0146e39fd8909c
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
