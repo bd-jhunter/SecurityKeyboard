@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kZG-n2-DxI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kZG-n2-DxI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,6 +38,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bk" translatesAutoresizingMaskIntoConstraints="NO" id="lUF-a9-571">
+                                <rect key="frame" x="20" y="232" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lUF-a9-571" secondAttribute="height" multiplier="1:1" id="dnU-cg-Z7I"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -47,10 +53,13 @@
                             <constraint firstItem="hOM-ca-WcU" firstAttribute="top" secondItem="nKP-Z8-ydm" secondAttribute="bottom" constant="43" id="SdC-1q-QBb"/>
                             <constraint firstItem="WZf-5b-ff4" firstAttribute="centerY" secondItem="hOM-ca-WcU" secondAttribute="centerY" id="U0V-ld-Ek6"/>
                             <constraint firstItem="nKP-Z8-ydm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="XBp-1f-s4T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lUF-a9-571" secondAttribute="trailing" constant="20" id="fFV-jy-Ady"/>
+                            <constraint firstItem="lUF-a9-571" firstAttribute="top" secondItem="WZf-5b-ff4" secondAttribute="bottom" constant="16.5" id="fbg-Yl-bBV"/>
                             <constraint firstItem="tQb-L0-wsq" firstAttribute="centerY" secondItem="nKP-Z8-ydm" secondAttribute="centerY" id="h4j-uh-DcS"/>
                             <constraint firstItem="nKP-Z8-ydm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i0C-5t-zd1"/>
                             <constraint firstItem="tQb-L0-wsq" firstAttribute="leading" secondItem="nKP-Z8-ydm" secondAttribute="trailing" constant="12" id="lI0-T2-Aob"/>
                             <constraint firstItem="hOM-ca-WcU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m1Z-AR-nv8"/>
+                            <constraint firstItem="lUF-a9-571" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uTE-3L-vyU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -82,4 +91,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bk" width="400" height="400"/>
+    </resources>
 </document>
