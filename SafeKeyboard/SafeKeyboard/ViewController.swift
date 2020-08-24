@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import CYRKeyboardButton
 
-class ViewController: UIViewController {
-    @IBOutlet weak var pwdTextField: UITextField!
+class ViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var pwdTextField: AppendTextField!
     
-    private var keyboardView: KeyboardView!
+    private var keyboardView: SRTKeyboardView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +20,24 @@ class ViewController: UIViewController {
     }
 
     private func setupKeyboard() {
-        guard let keyboardView: KeyboardView = Bundle.main.loadNibNamed("KeyboardView", owner: self, options: nil)?.first as? KeyboardView else { return }
+        guard let keyboardView: SRTKeyboardView = Bundle.main.loadNibNamed("SRTKeyboardView", owner: self, options: nil)?.first as? SRTKeyboardView else { return }
 
         self.keyboardView = keyboardView
         keyboardView.textInput = pwdTextField
         keyboardView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 260)
         pwdTextField.inputView = keyboardView.inputContainer
         pwdTextField.inputAccessoryView = keyboardView.accessoryView
+        pwdTextField.isSelected = false
+        pwdTextField.delegate = self
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
     }
 }
 
+class AppendTextField: UITextField {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+}

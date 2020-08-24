@@ -1,5 +1,5 @@
 //
-//  KeyboardView.swift
+//  SRTKeyboardView.swift
 //  SafeKeyboard
 //
 //  Created by hunter.liu on 2020/4/23.
@@ -8,124 +8,20 @@
 
 import UIKit
 import SnapKit
-import CYRKeyboardButton
 
-enum SRTKeyItemType {
-    case numeric
-    case alpha
-    case function
-}
-
-enum SRTKeyItem: String {
-    case alpha1 = "1"
-    case alpha2 = "2"
-    case alpha3 = "3"
-    case alpha4 = "4"
-    case alpha5 = "5"
-    case alpha6 = "6"
-    case alpha7 = "7"
-    case alpha8 = "8"
-    case alpha9 = "9"
-    case alpha0 = "0"
-    case alphaQ = "q"
-    case alphaW = "w"
-    case alphaE = "e"
-    case alphaR = "r"
-    case alphaT = "t"
-    case alphaY = "y"
-    case alphaU = "u"
-    case alphaI = "i"
-    case alphaO = "o"
-    case alphaP = "p"
-    case alphaA = "a"
-    case alphaS = "s"
-    case alphaD = "d"
-    case alphaF = "f"
-    case alphaG = "g"
-    case alphaH = "h"
-    case alphaJ = "j"
-    case alphaK = "k"
-    case alphaL = "l"
-    case alphaZ = "z"
-    case alphaX = "x"
-    case alphaC = "c"
-    case alphaV = "v"
-    case alphaB = "b"
-    case alphaN = "n"
-    case alphaM = "m"
-    case funcShift = "shift"
-    case funcSpace = "space"
-    case funcBackspace = "backspace"
-    
-    var itemType: SRTKeyItemType {
-        switch self {
-        case .alpha1,
-             .alpha2,
-             .alpha3,
-             .alpha4,
-             .alpha5,
-             .alpha6,
-             .alpha7,
-             .alpha8,
-             .alpha9,
-             .alpha0:
-            return .numeric
-        case .alphaQ,
-             .alphaW,
-             .alphaE,
-             .alphaR,
-             .alphaT,
-             .alphaY,
-             .alphaU,
-             .alphaI,
-             .alphaO,
-             .alphaP,
-             .alphaA,
-             .alphaS,
-             .alphaD,
-             .alphaF,
-             .alphaG,
-             .alphaH,
-             .alphaJ,
-             .alphaK,
-             .alphaL,
-             .alphaZ,
-             .alphaX,
-             .alphaC,
-             .alphaV,
-             .alphaB,
-             .alphaN,
-             .alphaM:
-            return .alpha
-        case .funcShift,
-             .funcSpace,
-             .funcBackspace:
-             return .function
-        }
-    }
-    
-    var isFunctionItem: Bool {
-        return self.itemType == .function
-    }
-}
-
-enum SRTFunctionKeyType: Int {
-    case capsLock = 500
-    case space = 501
-    case backspace = 502
-}
-
-class KeyboardView: UIView {
-    weak var textInput: UIView? {
+class SRTKeyboardView: UIView {
+    // MARK: - Properties
+    weak var textInput: UITextField? {
         didSet {
             updateTextInput()
         }
     }
-    
+    var textLimited: Int = 6
+
     @IBOutlet weak var accessoryView: UIView!
     @IBOutlet weak var inputContainer: UIView!
     
-    private var buttons: [CYRKeyboardButton] = []
+    private var buttons: [SRTKeyboardButton] = []
     private var functionButtons: [UIButton] = []
     private var buttonSize = CGSize(width: 30, height: 45)
     private var fatButtonSize = CGSize(width: 50, height: 45)
@@ -153,12 +49,16 @@ class KeyboardView: UIView {
         return ret ?? UIImage()
     }
     
+    private var textStore: String = ""
+    
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupButtons()
     }
     
+    // MARK: - Private methods
     private func setupButtons() {
         reset()
         setUIParameters()
@@ -199,7 +99,7 @@ class KeyboardView: UIView {
                 continue
             }
             
-            let button: CYRKeyboardButton = {
+            let button: SRTKeyboardButton = {
                 $0.translatesAutoresizingMaskIntoConstraints = false
                 inputContainer.addSubview($0)
                 $0.snp.makeConstraints { make in
@@ -209,23 +109,24 @@ class KeyboardView: UIView {
                 }
                 buttons.append($0)
                 return $0
-            }(CYRKeyboardButton())
+            }(SRTKeyboardButton())
             button.input = keyItems[index].rawValue
-            if let textInput = textInput as? UITextInput {
+            button.securityType = .security(textBox: self)
+            if let textInput = textInput {
                 button.textInput = textInput
             }
             
             leading += Double(buttonSize.width) + marginLeading
         }
     }
-    
+ 
     private func creatBottomRow() {
         let startPoint = leftTop(for: 3)
         var leading = Double(startPoint.x) + marginLeading + Double(fatButtonSize.width)
         let keyItems = keys(for: 3)
         // First is space, last is backspace
         for index in 1..<buttonCountInLastRow {
-            let button: CYRKeyboardButton = {
+            let button: SRTKeyboardButton = {
                 $0.translatesAutoresizingMaskIntoConstraints = false
                 inputContainer.addSubview($0)
                 $0.snp.makeConstraints { make in
@@ -235,16 +136,17 @@ class KeyboardView: UIView {
                 }
                 buttons.append($0)
                 return $0
-            }(CYRKeyboardButton())
+            }(SRTKeyboardButton())
             button.input = keyItems[index].rawValue
-            if let textInput = textInput as? UITextInput {
+            button.securityType = .security(textBox: self)
+            if let textInput = textInput {
                 button.textInput = textInput
             }
             
             leading += Double(buttonSize.width) + marginLeading
         }
     }
-    
+ 
     private func leftTop(for row: Int) -> CGPoint {
         let left = marginLeading
         let top = marginTop * Double(row + 1) + Double(buttonSize.height) * Double(row)
@@ -332,7 +234,7 @@ class KeyboardView: UIView {
     }
     
     private func updateTextInput() {
-        guard let textInput = textInput as? UITextInput else { return }
+        guard let textInput = textInput else { return }
         for button in buttons {
             button.textInput = textInput
         }
@@ -344,6 +246,7 @@ class KeyboardView: UIView {
             overturnKeys()
         case SRTFunctionKeyType.backspace.rawValue:
             print("ZZZ, tap backspace")
+            insertBackspace()
         case SRTFunctionKeyType.space.rawValue:
             insertSpace()
         default:
@@ -372,36 +275,48 @@ class KeyboardView: UIView {
     }
     
     private func insertSpace() {
-        var shouldInsertText = false
-        if let textView = textInput as? UITextView {
-            let selectedRange = textView.selectedRange
+        guard let textField  = textInput else { return }
 
-            shouldInsertText = textView.delegate?.textView?(textView, shouldChangeTextIn: selectedRange, replacementText: " ") ?? true
-        } else if let textField  = textInput as? UITextField {
-            let selectedRange = textField.nsRangeValue
+        let currentText: String = textField.text ?? ""
+        let shouldInsertText = currentText.count < textLimited
 
-            shouldInsertText = textField.delegate?.textField?(textField, shouldChangeCharactersIn: selectedRange, replacementString: " ") ?? true
-        }
-        
         if shouldInsertText {
-            (textInput as? UITextInput)?.insertText(" ")
+            let textBox: SRTSecurityTextBox = self
+            // in security mode, only support append, insert and replace is denied
+            textField.text = "\(textField.text ?? "")*"
+            textBox.append(" ")
         }
+    }
+    
+    private func insertBackspace() {
+        guard let textField  = textInput, let text = textField.text, !text.isEmpty else { return }
+        
+        let newString = String(text[..<text.index(before: text.endIndex)])
+        textField.text = newString
+        removeLast()
     }
 }
 
 extension UITextField {
     var nsRangeValue: NSRange {
-        if let selectedRange: UITextRange = selectedTextRange {
-            let beginning: UITextPosition = beginningOfDocument
-            let selectionStart:UITextPosition = selectedRange.start
-            let selectionEnd:UITextPosition = selectedRange.end
-            
-            let location = offset(from: beginning, to: selectionStart)
-            let length = offset(from: selectionStart, to: selectionEnd)
-            
-            return NSMakeRange(location, length)
-        } else {
-            return NSRange(location: 0, length: 0)
-        }
+        let location = text?.count ?? 0
+        return NSRange(location: location, length: 0)
+    }
+}
+
+extension SRTKeyboardView: SRTSecurityTextBox {
+    func append(_ text: String) {
+        textStore += text
+        print("ZZZZZ: \(textStore)")
+    }
+    
+    var plainText: String {
+        return textStore
+    }
+    
+    private func removeLast() {
+        let newString = String(textStore[..<textStore.index(before: textStore.endIndex)])
+        textStore = newString
+        print("ZZZZZ: \(textStore)")
     }
 }
