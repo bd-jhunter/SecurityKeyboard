@@ -60,9 +60,6 @@ class SRTKeyboardButton: UIControl {
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         let color = state == .highlighted ? keyHighlightedColor : keyColor
-        if state == .highlighted {
-            print("ZZZZZZZ")
-        }
         let shadowColor = keyShadowColor
         let shadowOffset = CGSize(width: 0.1, height: 1.1)
         let shadowBlurRadius: CGFloat = 0

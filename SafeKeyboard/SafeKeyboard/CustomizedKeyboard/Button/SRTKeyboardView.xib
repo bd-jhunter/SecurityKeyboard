@@ -47,6 +47,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="accessoryTitleLabel" destination="0Er-9D-Phn" id="iy9-qg-WEU"/>
                 <outlet property="accessoryView" destination="QSg-j4-Tww" id="PLj-4w-znP"/>
                 <outlet property="inputContainer" destination="Rhk-53-41G" id="Nvr-Z5-JuY"/>
             </connections>

@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupKeyboard()
+        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(tapBarButton(_:)))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
     private func setupKeyboard() {
@@ -24,20 +26,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
         self.keyboardView = keyboardView
         keyboardView.textInput = pwdTextField
-        keyboardView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 260)
         pwdTextField.inputView = keyboardView.inputContainer
         pwdTextField.inputAccessoryView = keyboardView.accessoryView
-        pwdTextField.isSelected = false
         pwdTextField.delegate = self
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // 禁掉外接键盘的输入
         return false
+    }
+    
+    @objc func tapBarButton(_ sender: UIBarButtonItem) {
+        pwdTextField.resignFirstResponder()
+        keyboardView.reset()
+        keyboardView.title = "志哥好"
+        keyboardView.titleColor = .red
+        keyboardView.titleBackgroundColor = .yellow
     }
 }
 
 class AppendTextField: UITextField {
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        // 禁掉选择、粘贴这些操作
         return false
     }
 }

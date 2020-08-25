@@ -9,6 +9,13 @@
 import UIKit
 import SnapKit
 
+fileprivate let keysPool: [SRTKeyItem] = [
+    .alpha1, .alpha2, .alpha3, .alpha4, .alpha5, .alpha6, .alpha7, .alpha8, .alpha9, .alpha0,
+    .alphaQ, .alphaW, .alphaE, .alphaR, .alphaT, .alphaY, .alphaU, .alphaI, .alphaO, .alphaP,
+    .alphaA, .alphaS, .alphaD, .alphaF, .alphaG, .alphaH, .alphaJ, .alphaK, .alphaL,
+    .alphaZ, .alphaX, .alphaC, .alphaV, .alphaB, .alphaN, .alphaM
+    ]
+
 class SRTKeyboardView: UIView {
     // MARK: - Properties
     weak var textInput: UITextField? {
@@ -17,9 +24,34 @@ class SRTKeyboardView: UIView {
         }
     }
     var textLimited: Int = 6
+    var title: String? {
+        get {
+            return accessoryTitleLabel.text
+        }
+        set {
+            accessoryTitleLabel.text = newValue
+        }
+    }
+    var titleColor: UIColor? {
+        get {
+            return accessoryTitleLabel.textColor
+        }
+        set {
+            accessoryTitleLabel.textColor = newValue
+        }
+    }
+    var titleBackgroundColor: UIColor? {
+        get {
+            return accessoryView.backgroundColor
+        }
+        set {
+            accessoryView.backgroundColor = newValue
+        }
+    }
 
-    @IBOutlet weak var accessoryView: UIView!
-    @IBOutlet weak var inputContainer: UIView!
+    @IBOutlet private(set) weak var accessoryView: UIView!
+    @IBOutlet private(set) weak var inputContainer: UIView!
+    @IBOutlet private weak var accessoryTitleLabel: UILabel!
     
     private var buttons: [SRTKeyboardButton] = []
     private var functionButtons: [UIButton] = []
@@ -28,8 +60,13 @@ class SRTKeyboardView: UIView {
     private var marginLeading: Double = 0.0
     private let marginTop: Double = 4.0
     private let buttonCountPerRow = 10
+    private let buttonCountLine1 = 10
+    private let buttonCountLine2 = 10
+    private let buttonCountLine3 = 9
+    private let buttonCountLine4 = 7
     private let buttonCountInLastRow = 8
     private let spaceBarImageSize = CGSize(width: 21, height: 12)
+    private var keyScheme: [[SRTKeyItem]] = []
     
     private var spaceBarImage: UIImage {
         var ret: UIImage?
@@ -57,25 +94,9 @@ class SRTKeyboardView: UIView {
         
         setupButtons()
     }
-    
-    // MARK: - Private methods
-    private func setupButtons() {
-        reset()
-        setUIParameters()
-        
-        createButton(for: 0)
-        createButton(for: 1)
-        createButton(for: 2)
-        creatBottomRow()
-        createFunctionButtons()
-    }
-    
-    private func setUIParameters() {
-        let screenSize = UIScreen.main.bounds.size
-        marginLeading = Double(Int(screenSize.width) - Int(buttonSize.width) * buttonCountPerRow) / Double(buttonCountPerRow + 1)
-    }
-    
-    private func reset() {
+
+    // MARK: - Public methods
+    func reset() {
         for button in buttons {
             button.removeFromSuperview()
         }
@@ -85,6 +106,37 @@ class SRTKeyboardView: UIView {
         
         buttons.removeAll()
         functionButtons.removeAll()
+        resetKeyScheme()
+        createButton(for: 0)
+        createButton(for: 1)
+        createButton(for: 2)
+        creatBottomRow()
+        createFunctionButtons()
+    }
+
+    // MARK: - Private methods
+    private func setupButtons() {
+        setUIParameters()
+        reset()
+    }
+    
+    private func setUIParameters() {
+        let screenSize = UIScreen.main.bounds.size
+        marginLeading = Double(Int(screenSize.width) - Int(buttonSize.width) * buttonCountPerRow) / Double(buttonCountPerRow + 1)
+    }
+    
+    private func resetKeyScheme() {
+        let pool = keysPool.sorted { (_, _) -> Bool in
+            arc4random() < arc4random()
+        }
+        let line1 = Array(pool[..<buttonCountLine1])
+        let line2 = Array(pool[buttonCountLine1..<(buttonCountLine1 + buttonCountLine2)])
+        var line3 = Array(pool[(buttonCountLine1 + buttonCountLine2)..<(buttonCountLine1 + buttonCountLine2 + buttonCountLine3)])
+        line3.insert(.funcShift, at: 0)
+        var line4 = Array(pool[(buttonCountLine1 + buttonCountLine2 + buttonCountLine3)...])
+        line4.insert(.funcSpace, at: 0)
+        line4.append(.funcBackspace)
+        keyScheme = [line1, line2, line3, line4]
     }
     
     private func createButton(for row: Int) {
@@ -154,18 +206,9 @@ class SRTKeyboardView: UIView {
     }
     
     private func keys(for row: Int) -> [SRTKeyItem] {
-        switch row {
-        case 0:
-            return [.alpha1, .alpha2, .alpha3, .alpha4, .alpha5, .alpha6, .alpha7, .alpha8, .alpha9, .alpha0]
-        case 1:
-            return [.alphaQ, .alphaW, .alphaE, .alphaR, .alphaT, .alphaY, .alphaU, .alphaI, .alphaO, .alphaP]
-        case 2:
-            return [.funcShift, .alphaA, .alphaS, .alphaD, .alphaF, .alphaG, .alphaH, .alphaJ, .alphaK, .alphaL]
-        case 3:
-            return [.funcSpace, .alphaZ, .alphaX, .alphaC, .alphaV, .alphaB, .alphaN, .alphaM, .funcBackspace]
-        default:
-            return []
-        }
+        guard row < keyScheme.count else { return [] }
+        
+        return keyScheme[row]
     }
     
     private func createFunctionButtons() {
