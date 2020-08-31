@@ -36,6 +36,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    @IBAction func tapPresentButton(_ sender: UIButton) {
+        let dialog = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SomeDialog")
+        dialog.modalPresentationStyle = .overCurrentContext
+        present(dialog, animated: true, completion: nil)
+    }
+    
     @objc func tapBarButton(_ sender: UIBarButtonItem) {
         pwdTextField.resignFirstResponder()
         keyboardView.reset()

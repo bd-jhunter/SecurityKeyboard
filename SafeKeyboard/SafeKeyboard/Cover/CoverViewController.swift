@@ -8,6 +8,35 @@
 
 import UIKit
 
+class CoverWindow: UIWindow {
+    static let shared: CoverWindow = CoverWindow()
+    
+    private init() {
+        super.init(frame: UIScreen.main.bounds)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func show() {
+        isHidden = false
+    }
+    
+    func hide() {
+        isHidden = true
+    }
+    
+    private func setup() {
+        backgroundColor = .clear
+        let coverVC = CoverViewController()
+        rootViewController = coverVC
+        isHidden = true
+        windowLevel = UIWindow.Level(rawValue: 1101.0)
+    }
+}
+
 class CoverViewController: UIViewController {
     
     init() {

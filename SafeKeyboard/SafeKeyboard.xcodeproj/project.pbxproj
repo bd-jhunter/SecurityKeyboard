@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F285DB524FC98C600D8CED1 /* SomeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F285DB424FC98C600D8CED1 /* SomeDialog.swift */; };
 		4F635C3324EFABDE00249290 /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F635C3224EFABDE00249290 /* CoverViewController.swift */; };
 		4F635C3924EFD02300249290 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F635C3824EFD02300249290 /* Utils.swift */; };
 		4F7F3BF7245136AE0086B708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BF6245136AE0086B708 /* AppDelegate.swift */; };
@@ -18,10 +19,12 @@
 		4F7F3C0E245138810086B708 /* SRTKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F3C0D245138810086B708 /* SRTKeyboardView.xib */; };
 		4FAEBAEA24580E19009A9B41 /* SRTKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */; };
 		4FB7397624F3912E00C041A5 /* SRTDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7397524F3912E00C041A5 /* SRTDefines.swift */; };
+		4FD01B7A24FCC94600A83479 /* UIResponder+FirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD01B7924FCC94600A83479 /* UIResponder+FirstResponder.m */; };
 		D92BA4F68285AC35CD5EB10F /* Pods_SafeKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644CB9B291AF1A7FE793898F /* Pods_SafeKeyboard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F285DB424FC98C600D8CED1 /* SomeDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeDialog.swift; sourceTree = "<group>"; };
 		4F635C3224EFABDE00249290 /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
 		4F635C3824EFD02300249290 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4F7F3BF3245136AE0086B708 /* SafeKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +38,9 @@
 		4F7F3C0D245138810086B708 /* SRTKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SRTKeyboardView.xib; sourceTree = "<group>"; };
 		4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRTKeyboardButton.swift; sourceTree = "<group>"; };
 		4FB7397524F3912E00C041A5 /* SRTDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRTDefines.swift; sourceTree = "<group>"; };
+		4FD01B7724FCC94600A83479 /* SafeKeyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SafeKeyboard-Bridging-Header.h"; sourceTree = "<group>"; };
+		4FD01B7824FCC94600A83479 /* UIResponder+FirstResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+FirstResponder.h"; sourceTree = "<group>"; };
+		4FD01B7924FCC94600A83479 /* UIResponder+FirstResponder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+FirstResponder.m"; sourceTree = "<group>"; };
 		644CB9B291AF1A7FE793898F /* Pods_SafeKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9823FC0C1F7E4E358F012CC /* Pods-SafeKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeKeyboard.debug.xcconfig"; path = "Target Support Files/Pods-SafeKeyboard/Pods-SafeKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		F2DCD404AE7DBF6578F9B04F /* Pods-SafeKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeKeyboard.release.xcconfig"; path = "Target Support Files/Pods-SafeKeyboard/Pods-SafeKeyboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +105,10 @@
 				4F7F3C01245136B10086B708 /* LaunchScreen.storyboard */,
 				4F7F3C04245136B10086B708 /* Info.plist */,
 				4F635C3824EFD02300249290 /* Utils.swift */,
+				4F285DB424FC98C600D8CED1 /* SomeDialog.swift */,
+				4FD01B7824FCC94600A83479 /* UIResponder+FirstResponder.h */,
+				4FD01B7924FCC94600A83479 /* UIResponder+FirstResponder.m */,
+				4FD01B7724FCC94600A83479 /* SafeKeyboard-Bridging-Header.h */,
 			);
 			path = SafeKeyboard;
 			sourceTree = "<group>";
@@ -164,7 +174,7 @@
 				TargetAttributes = {
 					4F7F3BF2245136AE0086B708 = {
 						CreatedOnToolsVersion = 11.4;
-						LastSwiftMigration = 1140;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -254,6 +264,8 @@
 				4FAEBAEA24580E19009A9B41 /* SRTKeyboardButton.swift in Sources */,
 				4FB7397624F3912E00C041A5 /* SRTDefines.swift in Sources */,
 				4F635C3924EFD02300249290 /* Utils.swift in Sources */,
+				4F285DB524FC98C600D8CED1 /* SomeDialog.swift in Sources */,
+				4FD01B7A24FCC94600A83479 /* UIResponder+FirstResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69X46QSJ44;
+				DEVELOPMENT_TEAM = PWUBJF64PG;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
@@ -414,7 +426,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jh.testkeyboard.SafeKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SafeKeyboard/SafeKeyboard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -428,7 +440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69X46QSJ44;
+				DEVELOPMENT_TEAM = PWUBJF64PG;
 				INFOPLIST_FILE = SafeKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -437,7 +449,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jh.testkeyboard.SafeKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SafeKeyboard/SafeKeyboard-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
