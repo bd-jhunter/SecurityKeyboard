@@ -65,26 +65,7 @@ class SRTKeyboardView: UIView {
     private let buttonCountLine3 = 9
     private let buttonCountLine4 = 7
     private let buttonCountInLastRow = 8
-    private let spaceBarImageSize = CGSize(width: 21, height: 12)
     private var keyScheme: [[SRTKeyItem]] = []
-    
-    private var spaceBarImage: UIImage {
-        var ret: UIImage?
-        UIGraphicsBeginImageContext(spaceBarImageSize)
-        let context = UIGraphicsGetCurrentContext()
-        let bezier = UIBezierPath()
-        bezier.move(to: .zero)
-        context?.setStrokeColor(UIColor.blue.cgColor)
-        bezier.lineWidth = 3.0
-        bezier.addLine(to: CGPoint(x: 0, y: spaceBarImageSize.height))
-        bezier.addLine(to: CGPoint(x: spaceBarImageSize.width, y: spaceBarImageSize.height))
-        bezier.addLine(to: CGPoint(x: spaceBarImageSize.width, y: 0))
-        bezier.lineCapStyle = .round
-        bezier.stroke()
-        ret = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return ret ?? UIImage()
-    }
     
     private var textStore: String = ""
     
@@ -216,13 +197,17 @@ class SRTKeyboardView: UIView {
         var leading = Double(startPoint.x)
         
         // create capslock button
-        var image = #imageLiteral(resourceName: "newcapsLock")
+        var image: UIImage = FunctionIcons.shift(color: .red) ?? UIImage()
         var button: UIButton = {
             $0.translatesAutoresizingMaskIntoConstraints = false
             inputContainer.addSubview($0)
             $0.setImage(image, for: .normal)
             $0.layer.cornerRadius = 5.0
-            $0.backgroundColor = .lightGray
+            $0.layer.shadowColor = #colorLiteral(red: 0.5333333333, green: 0.5411764706, blue: 0.5568627451, alpha: 1).cgColor
+            $0.layer.shadowOffset = CGSize(width: 0.1, height: 1.1)
+            $0.layer.shadowRadius = 0
+            $0.layer.shadowOpacity = 1.0
+            $0.backgroundColor = .white
             $0.snp.makeConstraints { make in
                 make.size.equalTo(buttonSize)
                 make.leading.equalToSuperview().offset(leading)
@@ -236,13 +221,17 @@ class SRTKeyboardView: UIView {
         
         // create space button
         startPoint = leftTop(for: 3)
-        image = spaceBarImage
+        image = FunctionIcons.spaceBar(color: .red) ?? UIImage()
         button = {
             $0.translatesAutoresizingMaskIntoConstraints = false
             inputContainer.addSubview($0)
             $0.setImage(image, for: .normal)
             $0.layer.cornerRadius = 5.0
-            $0.backgroundColor = .lightGray
+            $0.layer.shadowOffset = CGSize(width: 0.1, height: 1.1)
+            $0.layer.shadowColor = #colorLiteral(red: 0.5333333333, green: 0.5411764706, blue: 0.5568627451, alpha: 1).cgColor
+            $0.layer.shadowRadius = 0
+            $0.layer.shadowOpacity = 1.0
+            $0.backgroundColor = .white
             $0.snp.makeConstraints { make in
                 make.size.equalTo(fatButtonSize)
                 make.leading.equalToSuperview().offset(leading)
@@ -257,13 +246,17 @@ class SRTKeyboardView: UIView {
         leading = Double(startPoint.x) + (Double(fatButtonSize.width) + marginLeading) + (Double(buttonSize.width) + marginLeading) * Double(7)
         
         // create backspace button
-        image = #imageLiteral(resourceName: "newdelete")
+        image = FunctionIcons.backspace(color: .red) ?? UIImage()
         button = {
             $0.translatesAutoresizingMaskIntoConstraints = false
             inputContainer.addSubview($0)
             $0.setImage(image, for: .normal)
             $0.layer.cornerRadius = 5.0
-            $0.backgroundColor = .lightGray
+            $0.layer.shadowOffset = CGSize(width: 0.1, height: 1.1)
+            $0.layer.shadowColor = #colorLiteral(red: 0.5333333333, green: 0.5411764706, blue: 0.5568627451, alpha: 1).cgColor
+            $0.layer.shadowRadius = 0
+            $0.layer.shadowOpacity = 1.0
+            $0.backgroundColor = .white
             $0.snp.makeConstraints { make in
                 make.size.equalTo(fatButtonSize)
                 make.leading.equalToSuperview().offset(leading)
@@ -313,7 +306,7 @@ class SRTKeyboardView: UIView {
         }
         
         if let capsLockButton = functionButtons.first(where: { $0.tag == SRTFunctionKeyType.capsLock.rawValue }) {
-            capsLockButton.backgroundColor = lowcase ? .darkGray : .lightGray
+            capsLockButton.backgroundColor = lowcase ? .lightGray : .white
         }
     }
     

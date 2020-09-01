@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F285DB524FC98C600D8CED1 /* SomeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F285DB424FC98C600D8CED1 /* SomeDialog.swift */; };
+		4F3EA8FB24FE16E000B4B9C5 /* FunctionIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EA8FA24FE16E000B4B9C5 /* FunctionIcons.swift */; };
 		4F635C3324EFABDE00249290 /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F635C3224EFABDE00249290 /* CoverViewController.swift */; };
 		4F635C3924EFD02300249290 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F635C3824EFD02300249290 /* Utils.swift */; };
 		4F7F3BF7245136AE0086B708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BF6245136AE0086B708 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		4F285DB424FC98C600D8CED1 /* SomeDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeDialog.swift; sourceTree = "<group>"; };
+		4F3EA8FA24FE16E000B4B9C5 /* FunctionIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionIcons.swift; sourceTree = "<group>"; };
 		4F635C3224EFABDE00249290 /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
 		4F635C3824EFD02300249290 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4F7F3BF3245136AE0086B708 /* SafeKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 		4FAEBAE824580DEF009A9B41 /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				4F3EA8FA24FE16E000B4B9C5 /* FunctionIcons.swift */,
 				4FB7397524F3912E00C041A5 /* SRTDefines.swift */,
 				4FAEBAE924580E19009A9B41 /* SRTKeyboardButton.swift */,
 				4F7F3C0B245138730086B708 /* SRTKeyboardView.swift */,
@@ -261,6 +264,7 @@
 				4F7F3BFB245136AE0086B708 /* ViewController.swift in Sources */,
 				4F7F3C0C245138730086B708 /* SRTKeyboardView.swift in Sources */,
 				4F7F3BF7245136AE0086B708 /* AppDelegate.swift in Sources */,
+				4F3EA8FB24FE16E000B4B9C5 /* FunctionIcons.swift in Sources */,
 				4FAEBAEA24580E19009A9B41 /* SRTKeyboardButton.swift in Sources */,
 				4FB7397624F3912E00C041A5 /* SRTDefines.swift in Sources */,
 				4F635C3924EFD02300249290 /* Utils.swift in Sources */,

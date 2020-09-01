@@ -52,6 +52,13 @@
                                     <action selector="tapPresentButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V9b-ff-hyQ"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qwp-S7-nbG">
+                                <rect key="frame" x="20" y="637" width="60" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="GFr-W5-E0C"/>
+                                    <constraint firstAttribute="width" constant="60" id="Pvy-36-bp2"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,15 +73,18 @@
                             <constraint firstItem="nKP-Z8-ydm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="XBp-1f-s4T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lUF-a9-571" secondAttribute="trailing" constant="20" id="fFV-jy-Ady"/>
                             <constraint firstItem="lUF-a9-571" firstAttribute="top" secondItem="WZf-5b-ff4" secondAttribute="bottom" constant="16.5" id="fbg-Yl-bBV"/>
+                            <constraint firstItem="qwp-S7-nbG" firstAttribute="top" secondItem="lUF-a9-571" secondAttribute="bottom" constant="31" id="fnP-Nc-AHb"/>
                             <constraint firstItem="tQb-L0-wsq" firstAttribute="centerY" secondItem="nKP-Z8-ydm" secondAttribute="centerY" id="h4j-uh-DcS"/>
                             <constraint firstItem="nKP-Z8-ydm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i0C-5t-zd1"/>
                             <constraint firstItem="tQb-L0-wsq" firstAttribute="leading" secondItem="nKP-Z8-ydm" secondAttribute="trailing" constant="12" id="lI0-T2-Aob"/>
                             <constraint firstItem="hOM-ca-WcU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m1Z-AR-nv8"/>
+                            <constraint firstItem="qwp-S7-nbG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oHG-GV-QuO"/>
                             <constraint firstItem="lUF-a9-571" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uTE-3L-vyU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uoF-7v-DQS"/>
                     <connections>
+                        <outlet property="imageView" destination="qwp-S7-nbG" id="wIT-Oe-iuz"/>
                         <outlet property="pwdTextField" destination="WZf-5b-ff4" id="TUs-Qw-sSX"/>
                     </connections>
                 </viewController>

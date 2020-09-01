@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pwdTextField: AppendTextField!
+    @IBOutlet weak var imageView: UIImageView!
     
     private var keyboardView: SRTKeyboardView!
     
@@ -19,15 +20,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         setupKeyboard()
         let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(tapBarButton(_:)))
         navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        imageView.image = FunctionIcons.shift(color: .blue)
     }
 
     private func setupKeyboard() {
         guard let keyboardView: SRTKeyboardView = Bundle.main.loadNibNamed("SRTKeyboardView", owner: self, options: nil)?.first as? SRTKeyboardView else { return }
 
         self.keyboardView = keyboardView
+        keyboardView.title = "捷信金融安全键盘"
+        keyboardView.titleBackgroundColor = .white
+        keyboardView.titleColor = .red
         keyboardView.textInput = pwdTextField
-        pwdTextField.inputView = keyboardView.inputContainer
-        pwdTextField.inputAccessoryView = keyboardView.accessoryView
+        pwdTextField.inputView = keyboardView
         pwdTextField.delegate = self
     }
 
